@@ -1,8 +1,15 @@
-load("@rules_go//go:def.bzl", "go_library")
+load("@rules_go//go:def.bzl", "go_library", "go_test")
 
 go_library(
     name = "fortune",
     srcs = ["fortune.go"],
     importpath = "github.com/bmcmanus-apex/monorepo/simplego/fortune",
     visibility = ["//visibility:public"],
+)
+
+go_test(
+    name = "fortune_test",
+    size = "small",
+    srcs = ["fortune_test.go"],
+    embed = [":fortune"],
 )
