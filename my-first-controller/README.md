@@ -18,3 +18,7 @@ official Go client library for Kubernetes, to interact with the Kubernetes API.
 - Watching for changes to specific resources in the Kubernetes cluster
 - Reconciliation logic to ensure the desired state of resources
 - Example custom resources for testing the controller
+
+#### References
+
+- [Example followed](https://medium.com/@disha.20.10/building-and-extending-kubernetes-a-writing-first-custom-controller-with-go-bc57a50d61f7)
