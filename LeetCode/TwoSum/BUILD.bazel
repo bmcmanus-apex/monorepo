@@ -1,0 +1,15 @@
+load("@rules_go//go:def.bzl", "go_library", "go_test")
+
+go_library(
+    name = "TwoSum",
+    srcs = ["twosum.go"],
+    importpath = "github.com/bmcmanus-apex/monorepo/LeetCode/TwoSum",
+    visibility = ["//visibility:public"],
+)
+
+go_test(
+    name = "TwoSum_test",
+    srcs = ["twosum_test.go"],
+    embed = [":TwoSum"],
+    deps = ["@com_github_stretchr_testify//assert"],
+)
