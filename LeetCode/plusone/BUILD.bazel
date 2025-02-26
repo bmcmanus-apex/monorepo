@@ -1,0 +1,15 @@
+load("@rules_go//go:def.bzl", "go_library", "go_test")
+
+go_library(
+    name = "plusone",
+    srcs = ["plusone.go"],
+    importpath = "github.com/bmcmanus-apex/monorepo/LeetCode/plusone",
+    visibility = ["//visibility:public"],
+)
+
+go_test(
+    name = "plusone_test",
+    srcs = ["plusone_test.go"],
+    embed = [":plusone"],
+    deps = ["@com_github_stretchr_testify//assert"],
+)
