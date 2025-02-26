@@ -1,0 +1,15 @@
+load("@rules_go//go:def.bzl", "go_library", "go_test")
+
+go_library(
+    name = "AddTwoNumbers",
+    srcs = ["addtwonumbers.go"],
+    importpath = "github.com/bmcmanus-apex/monorepo/LeetCode/AddTwoNumbers",
+    visibility = ["//visibility:public"],
+)
+
+go_test(
+    name = "AddTwoNumbers_test",
+    srcs = ["addtwonumbers_test.go"],
+    embed = [":AddTwoNumbers"],
+    deps = ["@com_github_stretchr_testify//assert"],
+)
