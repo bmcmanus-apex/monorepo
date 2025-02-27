@@ -1,0 +1,14 @@
+load("@rules_go//go:def.bzl", "go_binary", "go_library")
+
+go_library(
+    name = "context_lib",
+    srcs = ["main.go"],
+    importpath = "github.com/bmcmanus-apex/monorepo/playground/concurrency/context",
+    visibility = ["//visibility:private"],
+)
+
+go_binary(
+    name = "context",
+    embed = [":context_lib"],
+    visibility = ["//visibility:public"],
+)
