@@ -1,0 +1,15 @@
+load("@rules_go//go:def.bzl", "go_library", "go_test")
+
+go_library(
+    name = "mergesortedarray",
+    srcs = ["mergesortedarray.go"],
+    importpath = "github.com/bmcmanus-apex/monorepo/LeetCode/mergesortedarray",
+    visibility = ["//visibility:public"],
+)
+
+go_test(
+    name = "mergesortedarray_test",
+    srcs = ["mergesortedarray_test.go"],
+    embed = [":mergesortedarray"],
+    deps = ["@com_github_stretchr_testify//assert"],
+)

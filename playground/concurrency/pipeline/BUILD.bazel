@@ -1,0 +1,14 @@
+load("@rules_go//go:def.bzl", "go_binary", "go_library")
+
+go_library(
+    name = "pipeline_lib",
+    srcs = ["main.go"],
+    importpath = "github.com/bmcmanus-apex/monorepo/playground/concurrency/pipeline",
+    visibility = ["//visibility:private"],
+)
+
+go_binary(
+    name = "pipeline",
+    embed = [":pipeline_lib"],
+    visibility = ["//visibility:public"],
+)
