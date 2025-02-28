@@ -1,0 +1,15 @@
+load("@rules_go//go:def.bzl", "go_library", "go_test")
+
+go_library(
+    name = "kokoeatingbananas",
+    srcs = ["mineatingspeed.go"],
+    importpath = "github.com/bmcmanus-apex/monorepo/LeetCode/kokoeatingbananas",
+    visibility = ["//visibility:public"],
+)
+
+go_test(
+    name = "kokoeatingbananas_test",
+    srcs = ["mineatingspeed_test.go"],
+    embed = [":kokoeatingbananas"],
+    deps = ["@com_github_stretchr_testify//assert"],
+)
