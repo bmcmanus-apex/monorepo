@@ -1,0 +1,15 @@
+load("@rules_go//go:def.bzl", "go_library", "go_test")
+
+go_library(
+    name = "mergeintervals",
+    srcs = ["mergeintervals.go"],
+    importpath = "github.com/bmcmanus-apex/monorepo/LeetCode/mergeintervals",
+    visibility = ["//visibility:public"],
+)
+
+go_test(
+    name = "mergeintervals_test",
+    srcs = ["mergeintervals_test.go"],
+    embed = [":mergeintervals"],
+    deps = ["@com_github_stretchr_testify//assert"],
+)
